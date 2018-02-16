@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TaskOne.Constructor.Program1</StartupObject>
+    <StartupObject>TaskOne.Week5Task.Tester</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassAndObject\Book.cs" />
+    <Compile Include="ClassAndObject\DerivedClass.cs" />
+    <Compile Include="ClassAndObject\Program_inherit.cs" />
+    <Compile Include="ClassAndObject\Vehincle.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Constructor\Maths_const.cs" />
     <Compile Include="Constructor\Program_const.cs" />
@@ -52,6 +56,10 @@
     <Compile Include="usingStatic\Program_Static.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Week5Task\Animal.cs" />
+    <Compile Include="Week5Task\Cat.cs" />
+    <Compile Include="Week5Task\Dog.cs" />
+    <Compile Include="Week5Task\Tester.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
