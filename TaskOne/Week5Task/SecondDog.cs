@@ -8,14 +8,19 @@ namespace TaskOne.Week5Task
 {
     class SecondDog
     {
-        private string name;
+        public string Name { get; set; }
 
         public override bool Equals(object obj)
         {
-            var dogA = new SecondDog();
-            var dogB = new SecondDog();
+            // var d = (SecondDog)obj;
+            var d = obj as SecondDog;
 
-            return dogA.name == dogB.name;
+            if(d?.Name == this.Name) // the question mark makes Name = null while empty
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

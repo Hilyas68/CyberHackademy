@@ -27,6 +27,20 @@ namespace TaskOne.Week5Task
 
             Console.ReadLine();
 
+            var dog = new SecondDog { Name = "Hassan" };
+            var dog1 = new SecondDog { Name = "Hassan" };
+
+            if (dog.Equals(dog1))
+            {
+                Console.WriteLine("Dogs are Equal");
+            }
+            else
+            {
+                Console.WriteLine("Dogs are not Equal");
+            }
+
+
+
         }
     }
 }

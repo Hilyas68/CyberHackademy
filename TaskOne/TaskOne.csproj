@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TaskOne.Week5Task.Tester</StartupObject>
+    <StartupObject>TaskOne.Week5Task.Exercise7.Tester</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -59,6 +59,15 @@
     <Compile Include="Week5Task\Animal.cs" />
     <Compile Include="Week5Task\Cat.cs" />
     <Compile Include="Week5Task\Dog.cs" />
+    <Compile Include="Week5Task\Exercise7\Dog.cs" />
+    <Compile Include="Week5Task\Generic\ComplaintManager.cs" />
+    <Compile Include="Week5Task\Generic\Message.cs" />
+    <Compile Include="Week5Task\Generic\MessageService.cs" />
+    <Compile Include="Week5Task\Generic\Tester.cs" />
+    <Compile Include="Week5Task\Interface\Document.cs" />
+    <Compile Include="Week5Task\Interface\IPrintable.cs" />
+    <Compile Include="Week5Task\Interface\IStorable.cs" />
+    <Compile Include="Week5Task\SecondDog.cs" />
     <Compile Include="Week5Task\Tester.cs" />
   </ItemGroup>
   <ItemGroup>
