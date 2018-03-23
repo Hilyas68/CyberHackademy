@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,10 @@ namespace TaskOne.MarchSecdTask
     {
         public static IEnumerable<Inventory> FreshInventories()
         {
+            ArrayList dd;
+            Hashtable s = new Hashtable();
+            s.Remove("");
+            s.Add("ss", "www");
             List<Inventory> inventories = new List<Inventory>()
             {
                 new Inventory()

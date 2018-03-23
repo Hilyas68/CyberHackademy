@@ -32,10 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TaskOne.Week5Task.Exercise7.Tester</StartupObject>
+    <StartupObject>TaskOne.BlogAppTask.Tester</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,13 +52,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogAppTask\BlogDBContext.cs" />
+    <Compile Include="BlogAppTask\EFRepository\EFRepository.cs" />
+    <Compile Include="BlogAppTask\EFRepository\IEFRepository.cs" />
+    <Compile Include="BlogAppTask\Model\Author.cs" />
+    <Compile Include="BlogAppTask\Model\BaseModel.cs" />
+    <Compile Include="BlogAppTask\Model\Blog.cs" />
+    <Compile Include="BlogAppTask\Model\Map\Mapping.cs" />
+    <Compile Include="BlogAppTask\Model\Post.cs" />
+    <Compile Include="BlogAppTask\Tester.cs" />
     <Compile Include="ClassAndObject\Book.cs" />
     <Compile Include="ClassAndObject\DerivedClass.cs" />
     <Compile Include="ClassAndObject\Program_inherit.cs" />
     <Compile Include="ClassAndObject\Vehincle.cs" />
+    <Compile Include="Collections\Collections.cs" />
+    <Compile Include="Collections\Tester.cs" />
+    <Compile Include="EF\Map\NinjaMap.cs" />
+    <Compile Include="EF\NinjaContext.cs" />
+    <Compile Include="EF\Tester.cs" />
+    <Compile Include="LINQ\LearnLinq.cs" />
+    <Compile Include="MarchSecdTask\Category.cs" />
+    <Compile Include="MarchSecdTask\InventoryComparer.cs" />
+    <Compile Include="MarchSecdTask\InventoryManager.cs" />
+    <Compile Include="MarchSecdTask\LinqSumTester.cs" />
+    <Compile Include="MarchSecdTask\OrderByTester.cs" />
+    <Compile Include="MarchSecdTask\SkipWhileTester.cs" />
+    <Compile Include="MarchSecdTask\UsingOtherOperations.cs" />
     <Compile Include="Maths.cs" />
-    <Compile Include="Constructor\Maths_const.cs" />
-    <Compile Include="Constructor\Program_const.cs" />
+    <Compile Include="ClassAndObject\Constructor\Maths_const.cs" />
+    <Compile Include="ClassAndObject\Constructor\Program_const.cs" />
+    <Compile Include="Migrations\201803231519221_Add.cs" />
+    <Compile Include="Migrations\201803231519221_Add.Designer.cs">
+      <DependentUpon>201803231519221_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="RandomTask\CountAlpahabetsDigitsSpecialCharacters.cs" />
+    <Compile Include="MarchSecdTask\Inventory.cs" />
+    <Compile Include="TestForTypeSafety.cs" />
     <Compile Include="usingStatic\Maths.cs" />
     <Compile Include="usingStatic\Program_Static.cs" />
     <Compile Include="Program.cs" />
@@ -71,8 +108,21 @@
     <Compile Include="Week5Task\Tester.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaDomainClasses\NinjaDomainClasses\NinjaDomainClasses.csproj">
+      <Project>{825bfc22-cc7a-4f9c-a773-516830b9f481}</Project>
+      <Name>NinjaDomainClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803231519221_Add.resx">
+      <DependentUpon>201803231519221_Add.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

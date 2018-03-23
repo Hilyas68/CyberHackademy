@@ -33,6 +33,10 @@ namespace TaskOne.MarchSecdTask
             {
                 Console.WriteLine($"{item.Id} {item.Name} : \t {item.Price} \t {item.EntryDate}");
             }
+
+            //Testing
+            var anonymousObject = new {Name = "Lara", MaritalStatus = "Married" };
+            Console.WriteLine(anonymousObject.Name); 
         }
     }
 }
