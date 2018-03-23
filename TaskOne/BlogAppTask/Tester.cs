@@ -12,26 +12,63 @@ namespace TaskOne.BlogAppTask
     {
         public static void Main()
         {
-            var c = new Post()
-            {
-                Title = "Csharp",
-                Body = "Csharp in a nutshell"
-            };
-
-            var post = new EFRepository<BlogDBContext, Post>();
-            
-            post.Add(c);
-            c.Title = "EntityFramework";
-            post.Edit(c);
-
+            Add_edit();
+            FindBy();
             //Find By
-            var result = post.FindBy(a => a.Title.Equals("EntityFramework")).ToList();
+            
+
+            //Console.Read();
+        }
+
+        public static void Delete()
+        {
+            var post = new EFRepository<BlogDBContext, Post>();
+            var result = post.Delete(3);
+        }
+
+        public static void GetAll()
+        {
+            var post = new EFRepository<BlogDBContext, Post>();
+            var result = post.GetAll();
             foreach (var item in result)
             {
                 Console.WriteLine(item.Title + " " + item.Body);
             }
 
-            //Console.Read();
+        }
+
+        public static void GetSingle()
+        {
+            var post = new EFRepository<BlogDBContext, Post>();
+            var result = post.GetSingle(2);
+          
+                Console.WriteLine(result.Title + " " + result.Body);
+            
+        }
+        public static void FindBy()
+        {
+            var post = new EFRepository<BlogDBContext, Post>();
+            var result = post.FindBy(a => a.Title.Equals("EntityFramework")).ToList();
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.Title + " " + item.Body);
+            }
+        }
+        public static  void Add_edit()
+        {
+            var c = new Post()
+            {
+                CreatedDate = DateTime.Now,
+                Title = "Csharp",
+                Body = "Csharp in a nutshell"
+            };
+
+            var post = new EFRepository<BlogDBContext, Post>();
+
+            post.Add(c);
+            c.Title = "EntityFramework";
+            post.Edit(c);
+
         }
     }
 }

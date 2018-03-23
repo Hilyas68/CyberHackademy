@@ -11,5 +11,7 @@ namespace TaskOne.BlogAppTask.Model
         public string Title { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Body { get; set; }
+
+        public List<Tag> Maps { get; set; }
     }
 }

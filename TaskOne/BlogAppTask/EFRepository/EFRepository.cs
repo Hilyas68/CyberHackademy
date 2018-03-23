@@ -18,37 +18,12 @@ namespace TaskOne.BlogAppTask.EFRepository
             Save();
         }
 
-        public void Delete(T entity)
+        public void Delete(int id)
         {
-            if (entity == null)
-                throw new ArgumentNullException("entity is null");
 
-            var result = context.Set<T>().FirstOrDefault(t => t.Id == entity.Id);
-
-            if (result == null)
-                return;
+            var result = context.Set<T>().FirstOrDefault(t => t.Id == id);
 
             context.Set<T>().Remove(result);
-            Save();
-        }
-
-        public void Delete(T[] entities)
-        {
-            Action<T> action = entity =>
-            {
-                if (entity == null)
-                    throw new ArgumentNullException("entity is null");
-
-                var result = context.Set<T>().FirstOrDefault(t => t.Id == entity.Id);
-
-                if (result == null)
-                    return;
-
-                context.Set<T>().Remove(result);
-            };
-
-            Array.ForEach(entities, action);
-
             Save();
         }
 
@@ -67,12 +42,12 @@ namespace TaskOne.BlogAppTask.EFRepository
 
         public IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Set<T>();
         }
 
         public T GetSingle(int id)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().FirstOrDefault(c=> c.Id == id); 
         }
 
         public void Save()

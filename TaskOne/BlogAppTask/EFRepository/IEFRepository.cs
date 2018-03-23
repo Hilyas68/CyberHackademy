@@ -13,8 +13,7 @@ namespace TaskOne.BlogAppTask.EFRepository
         IQueryable<T> GetAll();
         IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
         void Add(T entity);
-        void Delete(T entity);
-        void Delete(T[] entity);
+        void Delete(int id);
         void Edit(T entity);
         void Save();
     }
